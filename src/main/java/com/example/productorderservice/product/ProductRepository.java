@@ -5,8 +5,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component
+@Repository
 class ProductRepository {
 	
 	private Map<Long, Product> persistence = new HashMap<>();

@@ -4,9 +4,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 class ProductService {
-	private ProductPort productPort;
 	
-	ProductService(ProductPort productPort) {
+	private final ProductPort productPort;
+	
+	ProductService(final ProductPort productPort) {
 		this.productPort = productPort;
 	}
 
@@ -14,6 +15,5 @@ class ProductService {
 		final Product product = new Product(request.name(), request.price(), request.discountPolicy());
 		
 		productPort.save(product);
-		// throw new UnsupportedOperationException("Unsupported addProduct");
 	}
 }
