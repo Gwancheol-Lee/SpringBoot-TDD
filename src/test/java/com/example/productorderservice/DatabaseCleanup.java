@@ -44,12 +44,12 @@ public class DatabaseCleanup implements InitializingBean{
 		tableNames.addAll(entityNames);
 	}
 	
-	private boolean isEntity(EntityType<?> e) {
+	private boolean isEntity(final EntityType<?> e) {
 		return null != e.getJavaType().getAnnotation(Entity.class);
 	}
 	
-	private boolean hasTableAnnotation(EntityType<?> e) {
-		return null != e.getJavaType().getAnnotation(Entity.class);
+	private boolean hasTableAnnotation(final EntityType<?> e) {
+		return null != e.getJavaType().getAnnotation(Table.class);
 	}
 
 	@Transactional
