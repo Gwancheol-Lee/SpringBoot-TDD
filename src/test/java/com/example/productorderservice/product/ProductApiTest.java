@@ -3,6 +3,7 @@ package com.example.productorderservice.product;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
@@ -11,8 +12,12 @@ import com.example.productorderservice.ApiTest;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
+import jakarta.transaction.Transactional;
 
 class ProductApiTest extends ApiTest { 
+	
+	@Autowired
+	ProductRepository productRepository;
 	
 	@Test
 	void 상품등록() {
@@ -36,6 +41,12 @@ class ProductApiTest extends ApiTest {
 	
 	@Test
 	void 상품수정() {
+		ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
+		final long productId = 1L;
 		
+		final var response = ProductSteps.상품수정요청(productId, ProductSteps.상품수정요청_생성());
+				
+		assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+		assertThat(productRepository.findById(1L).get().getName()).isEqualTo("상품 수정");
 	}
 }
