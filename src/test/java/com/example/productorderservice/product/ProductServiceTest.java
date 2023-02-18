@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.util.Assert;
 
 import com.example.productorderservice.ApiTest;
@@ -28,7 +29,7 @@ class ProductServiceTest {
 		final long productId = 1L;
 		
 		// 상품조회
-		final GetProductResponse response = productService.getProduct(productId);
+		final ResponseEntity<GetProductResponse> response = productService.getProduct(productId);
 		
 		// 상품응답 검증
 		assertThat(response).isNotNull();
