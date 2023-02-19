@@ -3,7 +3,7 @@ package com.example.productorderservice.product;
 import org.springframework.stereotype.Component;
 
 @Component
-class ProductAdapter implements ProductPort { 
+public class ProductAdapter implements ProductPort { 
 	
 	private final ProductRepository productRepository;
 	

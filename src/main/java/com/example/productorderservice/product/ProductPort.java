@@ -1,6 +1,6 @@
 package com.example.productorderservice.product;
 
-interface ProductPort {
+public interface ProductPort {
 	 
 	void save(final Product product);
 	
