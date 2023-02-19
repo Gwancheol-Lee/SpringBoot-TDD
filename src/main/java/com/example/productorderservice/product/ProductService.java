@@ -24,7 +24,8 @@ public class ProductService {
 
 	@PostMapping
 	@Transactional
-	public ResponseEntity<Void> addProduct(@RequestBody final AddProductRequest request) {
+	public ResponseEntity<Void> addProduct(
+			@RequestBody final AddProductRequest request) {
 		final Product product = new Product(request.name(), request.price(), request.discountPolicy());
 		
 		productPort.save(product);
@@ -33,7 +34,8 @@ public class ProductService {
 	}
 	
 	@GetMapping("/{productId}")
-	public ResponseEntity<GetProductResponse> getProduct(@PathVariable final Long productId) {
+	public ResponseEntity<GetProductResponse> getProduct(
+			@PathVariable final Long productId) {
 		final Product product = productPort.getProduct(productId);
 		
 		final GetProductResponse response = new GetProductResponse(
@@ -47,7 +49,9 @@ public class ProductService {
 	
 	@PatchMapping("/{productId}")
 	@Transactional
-	public ResponseEntity<Void> updateProduct(@PathVariable final Long productId, @RequestBody UpdateProductRequest request) {
+	public ResponseEntity<Void> updateProduct(
+			@PathVariable final Long productId, 
+			@RequestBody UpdateProductRequest request) {
 		
 		final Product product = productPort.getProduct(productId);
 		product.update(request.name(), request.price(), request.discountPolicy());
