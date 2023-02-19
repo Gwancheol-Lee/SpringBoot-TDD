@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 
 import com.example.productorderservice.ApiTest;
+import com.example.productorderservice.product.adapter.ProductRepository;
 
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;

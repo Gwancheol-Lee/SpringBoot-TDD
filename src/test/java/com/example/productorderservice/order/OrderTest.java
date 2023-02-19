@@ -6,9 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 
 import com.example.productorderservice.ApiTest;
-import com.example.productorderservice.product.DiscountPolicy;
-import com.example.productorderservice.product.Product;
+import com.example.productorderservice.order.domain.Order;
 import com.example.productorderservice.product.ProductSteps;
+import com.example.productorderservice.product.domain.DiscountPolicy;
+import com.example.productorderservice.product.domain.Product;
 
 class OrderTest extends ApiTest {
 	

@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.productorderservice.order.OrderService;
 import com.example.productorderservice.order.OrderSteps;
-import com.example.productorderservice.product.ProductService;
+import com.example.productorderservice.order.application.service.OrderService;
+import com.example.productorderservice.payment.application.service.PaymentRequest;
+import com.example.productorderservice.payment.application.service.PaymentService;
 import com.example.productorderservice.product.ProductSteps;
+import com.example.productorderservice.product.application.service.ProductService;
 
 @SpringBootTest
 class PaymentServiceTest {

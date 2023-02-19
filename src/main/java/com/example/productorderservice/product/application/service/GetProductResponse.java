@@ -1,6 +1,8 @@
-package com.example.productorderservice.product;
+package com.example.productorderservice.product.application.service;
 
 import org.springframework.util.Assert;
+
+import com.example.productorderservice.product.domain.DiscountPolicy;
 
 public record GetProductResponse(long id, String name, int price, DiscountPolicy discountPolicy) {
 	public GetProductResponse{

@@ -2,6 +2,8 @@ package com.example.productorderservice.payment;
 
 import org.springframework.http.MediaType;
 
+import com.example.productorderservice.payment.application.service.PaymentRequest;
+
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
