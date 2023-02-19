@@ -9,13 +9,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Getter
+@Table(name = "payments")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Getter
 public class Payment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
