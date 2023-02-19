@@ -27,4 +27,7 @@ public class Payment {
 	public int getPrice() {
 		return order.getTotalPrice();
 	}
+	public String getCardNumber() {
+		return cardNumber;
+	}
 }

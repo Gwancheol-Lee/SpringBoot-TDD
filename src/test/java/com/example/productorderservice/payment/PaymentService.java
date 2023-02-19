@@ -15,7 +15,7 @@ class PaymentService {
 		
 		final Payment payment = new Payment(order, request.cardNumber());
 		
-		paymentPort.pay(payment);
+		paymentPort.pay(payment.getPrice(), payment.getCardNumber());
 		paymentPort.save(payment);
 	}
 }

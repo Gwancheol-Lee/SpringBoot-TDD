@@ -3,8 +3,8 @@ package com.example.productorderservice.payment;
 class ConsolePaymentGateway implements PaymentGateway {
 
 	@Override
-	public void excute(final Payment payment) {
-		System.out.println("상품 결제");
+	public void excute(final int totalPrice, final String cardNumber) {
+		System.out.println("결제 완료");
 	}
 	
 }
