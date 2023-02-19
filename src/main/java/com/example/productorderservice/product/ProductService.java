@@ -14,7 +14,7 @@ import jakarta.transaction.Transactional;
 
 @RestController
 @RequestMapping("/products")
-class ProductService {
+public class ProductService {
 	
 	private final ProductPort productPort;
 	
